@@ -1,11 +1,14 @@
 import React from "react";
+import VideoCall from "../components/farmer/VideoCall ";
+import Navbar from "../components/Navbar";
+import Chat from "../components/farmer/Chat";
 
 const Farmer = () => {
   return (
-    <div>
-      <h1>Farmer</h1>
-      <p>Farmer-related content here...</p>
-    </div>
+    <>
+    <Navbar/>
+    <Chat/>
+    </>
   );
 };
 

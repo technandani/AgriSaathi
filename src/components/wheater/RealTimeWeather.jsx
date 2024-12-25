@@ -1,56 +1,63 @@
 import React from "react";
 
-const RealTimeWeather = () => {
-  return (
-    <>
-      <div
-        className="realWheaterBox flex h-full w-[70%] bg-transparent rounded-xl"
-      >
-        <div className="realWheaterRightBox flex flex-col gap-3 p-4 dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-1/2">
-          <div className="realWheaterHeading text-center text-2xl font-bold">
-            Real Time Weather
-          </div>
-          <div className="realWheaterPara text-center text-lg">Supaul, Bihar</div>
-          <div className="realWheaterView flex items-center justify-center gap-5">
-            <div className="realWheaterViewIcon text-6xl">
-              <i className="fa-solid fa-cloud-sun"></i>
-            </div>
-            <div className="realWheaterViewData text-center">
-              <div className="realWheaterViewDataTem text-2xl">33°C</div>
-              <div className="realWheaterViewDataMinMaxTem">30°C / 35°C</div>
-            </div>
-          </div>
-        </div>
+const RealTimeWeather = ({ weatherData }) => {
+  console.log("weather data is: ", weatherData);
+  const {
+    temp = "N/A",
+    minTemp = "N/A",
+    maxTemp = "N/A",
+    chanceOfRain = "N/A",
+    lightning = "N/A",
+    windSpeed = "N/A",
+    humidity = "N/A",
+    sunrise = "N/A",
+    sunset = "N/A",
+  } = weatherData || {};
 
-        <div className="realWheaterLeftBox grid grid-cols-2 gap-4 p-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 w-1/2">
-          {[
-            { icon: "fa-cloud-sun", label: "Chance of rain", value: "0%" },
-            { icon: "fa-cloud", label: "Lightning", value: "N/A" },
-            { icon: "fa-cloud", label: "Wind speed", value: "0.2 KM/h" },
-            { icon: "fa-cloud-sun", label: "Humidity", value: "40.67%" },
-            { icon: "fa-sun", label: "Sunrise", value: "07:00:23" },
-            { icon: "fa-cloud", label: "Sunset", value: "18:10:03" },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="realWheaterView flex gap-3 items-center p-2 shadow-sm"
-            >
-              <div className="realWheaterViewIcon text-xl">
-                <i className={`fa-solid ${item.icon}`}></i>
-              </div>
-              <div className="realWheaterViewData">
-                <div className="realWheaterViewDataTem text-lg font-medium">
-                  {item.label}
-                </div>
-                <div className="realWheaterViewDataMinMaxTem text-sm">
-                  {item.value}
-                </div>
-              </div>
+  return (
+    <div className="realWheaterBox flex h-full w-full bg-transparent rounded-lg shadow-lg">
+      <div className="flex flex-col gap-3 p-4 bg-green-600 items-center justify-center dark:bg-gray-800 text-gray-100 w-1/2 rounded-l-lg">
+        <div className="text-center text-2xl font-bold">Real Time Weather</div>
+        <div className="text-center text-lg">{weatherData.address}</div>
+        <div className="flex items-center justify-center gap-5">
+          <div className="text-6xl text-yellow-500">
+            <i className="fa-solid fa-cloud-sun"></i>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-semibold">{weatherData.currentConditions.temp}°C</div>
+            <div className="text-gray-300 text-sm">
+              {weatherData.days[0].tempmin}°C / {weatherData.days[0].tempmax}°C
             </div>
-          ))}
+          </div>
         </div>
       </div>
-    </>
+
+      <div className="grid grid-cols-2 gap-2 p-2 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 w-1/2 rounded-r-lg">
+        {[
+          { icon: "fa-cloud-showers-heavy", label: "Chance of Rain", value: chanceOfRain },
+          { icon: "fa-bolt", label: "Lightning", value: lightning },
+          { icon: "fa-wind", label: "Wind Speed", value: weatherData.windspeed },
+          { icon: "fa-tint", label: "Humidity", value: humidity },
+          { icon: "fa-sun", label: "Sunrise", value: sunrise },
+          { icon: "fa-moon", label: "Sunset", value: sunset },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
+          >
+            <div className="text-2xl text-green-500">
+              <i className={`fa-solid ${item.icon}`}></i>
+            </div>
+            <div>
+              <div className="text-lg font-medium">{item.label}</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">
+                {item.value}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

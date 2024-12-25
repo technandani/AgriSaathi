@@ -1,10 +1,7 @@
-// SidebarContext.js
 import React, { createContext, useState, useContext } from 'react';
 
-// Create the Sidebar Context
 const SidebarContext = createContext();
 
-// Create a provider to manage sidebar state
 export const SidebarProvider = ({ children }) => {
   const [isCompressed, setIsCompressed] = useState(false);
 
@@ -19,5 +16,4 @@ export const SidebarProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the sidebar context
 export const useSidebar = () => useContext(SidebarContext);

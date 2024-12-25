@@ -1,9 +1,15 @@
 import React from "react";
 
-const WeeklyForcast = () => {
+const WeeklyForcast = ({ weatherData }) => {
+  console.log("weather data is: ", weatherData);
+  const {
+    minTemp = "N/A",
+    maxTemp = "N/A",
+    chanceOfRain = "N/A",
+  } = weatherData || {};
   return (
     <div
-      className="weatehers bg-transparent shadow-md rounded-xl w-1/3 p-5 dark:bg-gray-800 dark:text-white"
+      className="weatehers bg-transparent shadow-md rounded-xl w-full p-5 dark:bg-gray-800 dark:text-white"
       style={{ boxShadow: "0 0 2px #fff" }}
     >
       <div className="heading text-lg font-bold pb-8">7-days weather forecast</div>

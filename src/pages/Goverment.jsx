@@ -1,9 +1,22 @@
 import React from 'react'
+import Schemes from '../components/govermentScheme/Schemes'
+import Navbar from '../components/Navbar'
+import Styled from 'styled-components'
+
+const MainWrapper = Styled.div``;
+const TopWrapper = Styled.div``;
+const BottomWrapper = Styled.div``;
 
 const Goverment = () => {
   return (
     <>
-      <div>Goverment</div>
+    <Navbar/>
+      <MainWrapper>
+        <TopWrapper></TopWrapper>
+        <BottomWrapper>
+            <Schemes/>
+        </BottomWrapper>
+      </MainWrapper>
     </>
   )
 }

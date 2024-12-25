@@ -1,11 +1,22 @@
 import React from "react";
+import Navbar from "../components/Navbar";
+import InfoCard from "../components/profile/InfoCard";
+import TabSwitcher from "../components/profile/TabSwitcher";
+import FarmerPost from "../components/profile/FarmerPost";
+import styled from "styled-components";
+
+const ProfileWrapper = styled.div``;
 
 const Profile = () => {
   return (
-    <div>
-      <h1>Profile</h1>
-      <p>Your profile information here...</p>
-    </div>
+    <>
+      <Navbar />
+      <ProfileWrapper className="min-h-screen flex flex-col">
+        <InfoCard />
+        <TabSwitcher />
+        <FarmerPost />
+      </ProfileWrapper>
+    </>
   );
 };
 

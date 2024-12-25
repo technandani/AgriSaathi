@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* for image slider in post card */
+/* @import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css"; */
+
+
 *{
   margin: 0;
   padding: 0;

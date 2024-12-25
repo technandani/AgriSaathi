@@ -1,29 +1,19 @@
-// Sidebar.jsx
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useSidebar } from "../SidebarContext"; // Use the context
-import "./Sidebar.css";
+import { useSidebar } from "../context/SidebarContext"; 
 
 const Sidebar = () => {
-  const { isCompressed, toggleSidebar } = useSidebar(); // Access isCompressed and toggleSidebar
+  const { isCompressed, toggleSidebar } = useSidebar(); 
 
   return (
     <div className={`sidebar ${isCompressed ? "compressed" : "expanded"}`}>
       <div className="sidebar-header">
         <div
-          className="logo"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            fontSize: "30px",
-            fontWeight: "700",
-            gap: "8px",
-          }}
+          className="logo flex item-center font-bold text-3xl gap-2 h-12 w-12 min-w-12 min-h-12"
         >
           <img
             src="./images/agriculture.png"
-            alt=""
-            style={{ height: "50px", width: "50px" }}
+            alt="" className="h-full w-full"
           />
           {!isCompressed && <span>AgriSathi</span>}
         </div>
@@ -72,6 +62,20 @@ const Sidebar = () => {
   {!isCompressed && <span>Farmer</span>}
 </NavLink>
 <NavLink
+  to="/crops"
+  className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}
+>
+  <i className="fa-brands fa-pagelines"></i>
+  {!isCompressed && <span>crops</span>}
+</NavLink>
+<NavLink
+  to="/marketplace"
+  className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}
+>
+  <i className="fa-solid fa-tractor"></i>
+  {!isCompressed && <span>MarketPlace</span>}
+</NavLink>
+<NavLink
   to="/settings"
   className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}
 >
@@ -79,11 +83,18 @@ const Sidebar = () => {
   {!isCompressed && <span>Settings</span>}
 </NavLink>
 <NavLink
+  to="/manageScheme"
+  className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}
+>
+   <i className="fa-solid fa-calendar-days"></i>
+  {!isCompressed && <span>Scheme management</span>}
+</NavLink>
+<NavLink
   to="/profile"
   className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}
 >
   <i className="fa fa-user"></i>
-  {!isCompressed && <span>Profile</span>}
+  {!isCompressed && <span>Sign Out</span>}
 </NavLink>
 
       </div>

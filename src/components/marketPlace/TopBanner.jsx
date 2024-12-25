@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Posts = () => {
+const TopBanner = () => {
   return (
     <>
       
@@ -8,4 +8,4 @@ const Posts = () => {
   )
 }
 
-export default Posts
+export default TopBanner
