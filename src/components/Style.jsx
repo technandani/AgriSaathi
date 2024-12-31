@@ -3,7 +3,7 @@ import React from 'react'
 const style = () => {
   return (
     <>
-     <div className="mainBox" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr', justifyContent: 'space-between' }}>
+   <div className="mainBox" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr', justifyContent: 'space-between' }}>
   <div className="box box1">box1</div>
   <div className="box box2" style={{backgroundColor: '#04130b'}}>box2</div>
   <div className="box box3">box3</div>

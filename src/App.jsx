@@ -73,7 +73,6 @@ const AppContent = () => {
     </ThemeProvider>
   );
 };
-
 const App = () => {
   return (
     <SidebarProvider>
