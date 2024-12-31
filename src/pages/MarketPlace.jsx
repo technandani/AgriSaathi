@@ -1,18 +1,15 @@
 import React from "react";
-import ProductCards from "../components/marketPlace/ProductCards";
-import Navbar from "../components/Navbar";
-import TopBanner from "../components/marketPlace/TopBanner";
+import Navbar from "../components/common/Navbar";
 import MainProductCard from "../components/marketPlace/MainProductCard";
 
 const MarketPlace = () => {
   return (
-    <>
+    <div className="w-full h-full overflow-y-scroll">
       <Navbar />
-      <div className="bg-green-100 min-h-screen">
-        <TopBanner />
+      <div className="w-full p-4 bg-green-100">
         <MainProductCard />
       </div>
-    </>
+    </div>
   );
 };
 

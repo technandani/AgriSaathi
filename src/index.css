@@ -2,24 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* for image slider in post card */
-/* @import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css"; */
-
-
-*{
-  margin: 0;
-  padding: 0;
-  outline: none;
-  text-decoration: none;
+#header{
+  background: linear-gradient(45deg, #003E1F, #003E1F);
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+::-webkit-scrollbar{
+  width: 0;
 }
 
 button{
@@ -43,13 +31,6 @@ a{
 
 .icon.modeBtn:hover {
   color: var(--icon-hover-color); /* Optional hover effect */
-}
-
-
-.box{
-  height: 100px;
-  width: 100px;
-  margin: 20px;
 }
 
 .box1 {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Schemes from '../components/govermentScheme/Schemes'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/common/Navbar'
 import Styled from 'styled-components'
 
 const MainWrapper = Styled.div``;

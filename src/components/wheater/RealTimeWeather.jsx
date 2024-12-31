@@ -15,7 +15,7 @@ const RealTimeWeather = ({ weatherData }) => {
   } = weatherData || {};
 
   return (
-    <div className="realWheaterBox flex h-full w-full bg-transparent rounded-lg shadow-lg">
+    <div className=" flex h-full w-full bg-transparent rounded-lg shadow-lg">
       <div className="flex flex-col gap-3 p-4 bg-green-600 items-center justify-center dark:bg-gray-800 text-gray-100 w-1/2 rounded-l-lg">
         <div className="text-center text-2xl font-bold">Real Time Weather</div>
         <div className="text-center text-lg">{weatherData.address}</div>
@@ -32,7 +32,7 @@ const RealTimeWeather = ({ weatherData }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 p-2 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 w-1/2 rounded-r-lg">
+      <div className="grid grid-cols-2 gap-2 p-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 w-1/2 rounded-r-lg">
         {[
           { icon: "fa-cloud-showers-heavy", label: "Chance of Rain", value: chanceOfRain },
           { icon: "fa-bolt", label: "Lightning", value: lightning },
