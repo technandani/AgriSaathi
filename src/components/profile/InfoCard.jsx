@@ -12,7 +12,7 @@ const InfoCard = () => {
       </div>
       <div className="flex flex-col items-start px-8 -mt-16">
         <div className="flex items-start space-x-6 pb-2.5">
-          <img
+          <img  
             src="images/user.jpg" 
             alt="Profile"
             className="w-44 h-44 rounded-full border-4 border-white dark:border-gray-700"
