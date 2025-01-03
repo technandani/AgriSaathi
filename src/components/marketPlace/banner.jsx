@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-const banners=["images/farmercpy.jpg","images/farmer.jpg"]
+const banners = ["images/farmercpy.jpg", "images/farmer.jpg"]
 function Banner() {
 
 
@@ -8,19 +8,19 @@ function Banner() {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length);
-        }, 5000); 
+        }, 5000);
 
-        return () => clearInterval(intervalId); 
+        return () => clearInterval(intervalId);
     }, []);
 
     return (
         <>
-            
-                <div className="rounded-lg h-55 ">
-                    <img src={banners[currentIndex]} alt="banner-img" className="rounded-lg"/>
-                  
-                </div>
-           
+
+            <div className="rounded-lg h-55 ">
+                <img src={banners[currentIndex]} alt="banner-img" className="rounded-lg" />
+
+            </div>
+
         </>
     );
 }

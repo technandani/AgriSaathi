@@ -7,6 +7,12 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily:{
+        Nuntio: ["Nunito", "serif"],
+        Playfair: ["Playfair Display", "serif"],
+        Roboto: ["Roboto Slab", "system-ui"],
+        Lora: ["Lora", "system-ui"],
+      },
       colors: {
         darkBg: '#04130B',
         lightText: '#fff',

@@ -59,31 +59,34 @@ const products = [
 ];
 const ProductCards = () => {
   return (
-   <>
-   <div className="flex flex-row items-center justify-between text-white h-20 mb-2">
-  <div className="font-semibold">Vegetables seeds</div>
-  <div className="font-semibold">View all</div>
-</div>
+    <div className="w-full mb-8">
+      <div className="w-full text-white h-10 mb-2 text-xl">
+        <div className="flex items-center justify-between px-4">
+          <div className="font-semibold">Vegetables seeds</div>
+          <div className="font-semibold">View all</div>
+        </div>
+        <div className="w-full h-[0.1rem] bg-white mt-1"></div>
+      </div>
 
-    <Swiper
-      modules={[Navigation]}
-      slidesPerView={3}
-      navigation
-      
-    >
-      {products.map((product, index) => (
-        <SwiperSlide key={index}>
-          <ProductCard
-            title={product.title}
-            price={product.price}
-            originalPrice={product.originalPrice}
-            discount={product.discount}
-            image={product.image}
-        />
-        </SwiperSlide>
-      ))}
-    </Swiper>
-    </>
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={30}
+        slidesPerView={3}
+        navigation
+      >
+        {products.map((product, index) => (
+          <SwiperSlide key={index}>
+            <ProductCard
+              title={product.title}
+              price={product.price}
+              originalPrice={product.originalPrice}
+              discount={product.discount}
+              image={product.image}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 

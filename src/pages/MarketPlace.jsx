@@ -6,7 +6,7 @@ const MarketPlace = () => {
   return (
     <div className="w-full h-full overflow-y-scroll">
       <Navbar />
-      <div className="w-full p-4">
+      <div className="w-full px-3 py-2">
         <MainProductCard />
       </div>
     </div>

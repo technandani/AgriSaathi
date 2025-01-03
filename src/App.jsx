@@ -11,7 +11,7 @@ const App = () => {
     dispatch(checkMenu(!isCompressed))
 }
   return (
-    <div className="w-[100vw] h-[100vh] flex relative">
+    <div className="w-[100vw] h-[100vh] flex relative font-Nuntio">
       <button className={`absolute z-50 text-[2rem] ${isCompressed?"left-[17%] text-white":"left-[1%] text-black"} top-1`} onClick={handleToggle}>
         {isCompressed ? <i class="ri-arrow-left-s-line"></i>:<i class="ri-menu-fold-2-line"></i>}
       </button>
