@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-14 flex items-center justify-end px-2 sticky top-0 bg-white z-50">
+    <div className="w-full h-14 flex items-center justify-end px-2 sticky top-0 bg-white z-20 dark:bg-gray-700">
       <div className="w-[30%] h-[80%]">
         <input
           type="search"

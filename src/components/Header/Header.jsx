@@ -1,19 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import MenuOption from './MenuOption'
 import { checkMenu } from '../../features/sliderSlice'
+import MenuOption from './MenuOption'
+import 'remixicon/fonts/remixicon.css'
 
 const Header = () => {
     const isCompressed = useSelector(state=>state.menuOpen)
     const dispatch = useDispatch();
-    const handleToggle = () => {
-        dispatch(checkMenu(!isCompressed))
-    }
+    
     return (
-        <header id="header" className='w-[20%] h-full flex flex-col py-4 px-6'>
+        <header id="header" className={`${isCompressed?"w-[20%] py-4 px-6":"w-0 p-0"} h-full flex flex-col duration-500`}>
+           
             <div className="w-full h-[10%] flex item-center font-bold text-3xl gap-2">
                 <img src="./images/agriculture.png" alt="no image" className="h-10 w-10 rounded-full" />
-                {!isCompressed && <h1 className='text-white'>AgriSathi</h1>}
+                {isCompressed && <h1 className='text-white'>AgriSathi</h1>}
             </div>
             <div className="w-full h-[90%] overflow-y-scroll text-white text-lg">
                 <MenuOption link="/" icon={<i className="fa-solid fa-house"></i>} text="Home" />

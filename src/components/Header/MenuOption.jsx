@@ -7,10 +7,10 @@ const MenuOption = ({link , icon, text}) => {
     return (
         <NavLink
             to={link}
-            className={({ isActive }) => `w-full h-12  rounded-sm flex items-center gap-1 px-1 flex-1 mb-2 duration-200 ${isActive ? "bg-white px-2 text-black" : "hover:bg-white/10"}`}
+            className={({ isActive }) => `w-full h-12  rounded-sm flex items-center gap-2 px-1 flex-1 mb-2 duration-200 ${isActive ? "bg-white px-2 text-black" : "hover:bg-white/10"}`}
         >
             {icon}
-            {!isCompressed && <h3>{text}</h3>}
+            <h3>{text}</h3>
         </NavLink>
     )
 }
