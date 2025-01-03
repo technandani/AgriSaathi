@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/common/Navbar";
 import Suggiession from "../components/post/Suggiession";
 import styled from "styled-components";
 import FarmersPosts from "../components/post/FarmersPosts";

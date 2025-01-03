@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const products = [
+const fruitseeds = [
   {
     title: "Exfoliated Vermiculite - 1 kg",
     price: 200,
@@ -57,11 +57,11 @@ const products = [
     image: "images/Organic.jpg",
   },
 ];
-const ProductCards = () => {
+const Fruitseed = () => {
   return (
    <>
    <div className="flex flex-row items-center justify-between text-white h-20 mb-2">
-  <div className="font-semibold">Vegetables seeds</div>
+  <div className="font-semibold">Fruit seeds</div>
   <div className="font-semibold">View all</div>
 </div>
 
@@ -71,14 +71,14 @@ const ProductCards = () => {
       navigation
       
     >
-      {products.map((product, index) => (
+      {fruitseeds.map((fruitseed, index) => (
         <SwiperSlide key={index}>
           <ProductCard
-            title={product.title}
-            price={product.price}
-            originalPrice={product.originalPrice}
-            discount={product.discount}
-            image={product.image}
+            title={fruitseed.title}
+            price={fruitseed.price}
+            originalPrice={fruitseed.originalPrice}
+            discount={fruitseed.discount}
+            image={fruitseed.image}
         />
         </SwiperSlide>
       ))}
@@ -86,5 +86,4 @@ const ProductCards = () => {
     </>
   );
 };
-
-export default ProductCards;
+export default Fruitseed;

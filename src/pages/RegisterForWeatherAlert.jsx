@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/common/Navbar'
 import AlertRegistration from '../components/wheater/AlertRegistration'
 import styled from 'styled-components'
 import SafetyInstraction from '../components/wheater/SafetyInstraction';

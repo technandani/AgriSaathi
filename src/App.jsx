@@ -1,10 +1,11 @@
+
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { SidebarProvider } from "./context/SidebarContext"; 
+import {  useSidebar,SidebarProvider } from "./context/SidebarContext"; 
 import { PostProvider } from "./context/PostContext";
 import Dashboard from "./pages/Dashboard";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Home/Sidebar";
 import Goverment from "./pages/Goverment";
 import Posts from "./pages/Posts";
 import Settings from "./pages/Settings";
@@ -15,7 +16,7 @@ import RegisterForWeatherAlert from './pages/RegisterForWeatherAlert';
 import { ThemeProvider } from './context/theme';
 import Schemes from './admin/Schemes';
 import MarketPlace from './pages/MarketPlace';
-import { useSidebar } from "./context/SidebarContext"; 
+
 
 const AppContent = () => {
   const [themeMode, setThemeMode] = useState("light");
@@ -73,11 +74,20 @@ const AppContent = () => {
     </ThemeProvider>
   );
 };
+
+
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header/Header"
+
+
 const App = () => {
   return (
-    <SidebarProvider>
-      <AppContent />
-    </SidebarProvider>
+    <div className="w-[100vw] h-[100vh] flex">
+      <Header />
+      <main className="w-[80%] h-full">
+        <Outlet />
+      </main>
+    </div>
   );
 };
 
