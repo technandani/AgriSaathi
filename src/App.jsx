@@ -7,6 +7,7 @@ const App = () => {
     <div className="w-[100vw] h-[100vh] flex">
       <Header />
       <main className="w-[80%] h-full">
+        
         <Outlet />
       </main>
     </div>

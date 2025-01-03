@@ -1,9 +1,14 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import MenuOption from './MenuOption'
+import { checkMenu } from '../../features/sliderSlice'
 
 const Header = () => {
-    const isCompressed = useSelector(state=>state.sliderSlice)
+    const isCompressed = useSelector(state=>state.menuOpen)
+    const dispatch = useDispatch();
+    const handleToggle = () => {
+        dispatch(checkMenu(!isCompressed))
+    }
     return (
         <header id="header" className='w-[20%] h-full flex flex-col py-4 px-6'>
             <div className="w-full h-[10%] flex item-center font-bold text-3xl gap-2">
