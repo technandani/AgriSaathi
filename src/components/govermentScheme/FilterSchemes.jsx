@@ -15,9 +15,9 @@ const FilterSchemes = ({ onFilterChange }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 w-full">
+    <div className="bg-white dark:bg-[#1a1a1a] shadow-lg rounded-lg p-6 w-full h-full overflow-y-scroll">
       <div className="flex justify-between items-center mb-6">
-        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
+        <h3 className="text-xl font-semibold text-[#1a1a1a] dark:text-gray-200">
           Filters
         </h3>
         <button
@@ -43,7 +43,7 @@ const FilterSchemes = ({ onFilterChange }) => {
           <select
             value={filters.state}
             onChange={(e) => handleFilterChange("state", e.target.value)}
-            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-[#1a1a1a] text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             <option value="">All States</option>
             <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -119,7 +119,7 @@ const FilterSchemes = ({ onFilterChange }) => {
             value={filters.age}
             onChange={(e) => handleFilterChange("age", e.target.value)}
             placeholder="Enter age"
-            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-[#1a1a1a] text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
         <div>
@@ -129,7 +129,7 @@ const FilterSchemes = ({ onFilterChange }) => {
           <select
             value={filters.caste}
             onChange={(e) => handleFilterChange("caste", e.target.value)}
-            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-[#1a1a1a] text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             <option value="">All Castes</option>
             <option value="General">General</option>
@@ -146,7 +146,7 @@ const FilterSchemes = ({ onFilterChange }) => {
             value={filters.ministry}
             onChange={(e) => handleFilterChange("ministry", e.target.value)}
             placeholder="Enter ministry name"
-            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-[#1a1a1a] text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
       </div>

@@ -9,16 +9,16 @@ const WeeklyForcast = ({ weatherData }) => {
   } = weatherData || {};
   return (
     <div
-      className="weatehers bg-transparent shadow-md rounded-xl w-full p-5 dark:bg-gray-800 dark:text-white"
-      style={{ boxShadow: "0 0 2px #fff" }}
+      className="weatehers rounded-xl w-full p-5 shadow-inner"
+
     >
       <div className="heading text-lg font-bold pb-8">7-days weather forecast</div>
       <div className="forcastBox flex flex-col gap-2.5">
         {[...Array(7)].map((_, index) => (
           <div
             key={index}
-            className="days flex justify-between items-center h-12 px-5 shadow-md rounded-xl dark:bg-gray-700 dark:text-white"
-            style={{ boxShadow: "0 0 2px #fff" }}
+            className="days flex justify-between items-center h-12 px-5 shadow-md rounded-xl bg-[#eee] dark:bg-[#121212]"
+      
           >
             <div className="day">Today</div>
             <div className="dayIcon text-2xl">

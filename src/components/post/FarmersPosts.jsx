@@ -1,15 +1,10 @@
-import React, { useContext } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchPosts } from "../../features/posts/postSlice";
 import PostCard from "./PostCard";
 import styled from "styled-components";
-import { PostContext } from "../../context/PostContext";
 
 const Posts = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 30px;
-  height: 89vh;
   overflow-y: auto;
 
   &::-webkit-scrollbar {
@@ -18,7 +13,12 @@ const Posts = styled.div`
 `;
 
 const FarmersPosts = () => {
-  const { postData, loading, error } = useContext(PostContext);
+  const dispatch = useDispatch();
+  const { postData, loading, error } = useSelector((state) => state.posts);
+
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, [dispatch]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -29,7 +29,9 @@ const FarmersPosts = () => {
   }
 
   return (
-    <Posts>
+    <div className='lg:max-h-[77vmin] sm:max-h-[80vmin]  overflow-y-scroll  w-full lg:m-4'>
+      <Posts className="flex flex-col gap-4 max-h-4/5 overflow-y-scroll justify-center p-4">
+      
       {postData.map((post) => (
         <PostCard
           key={post.post_id}
@@ -47,6 +49,7 @@ const FarmersPosts = () => {
         />
       ))}
     </Posts>
+    </div>
   );
 };
 

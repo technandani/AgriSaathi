@@ -1,29 +1,27 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import MenuOption from './MenuOption'
+import React from "react";
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
-const Header = () => {
-    const isCompressed = useSelector(state=>state.sliderSlice)
-    return (
-        <header id="header" className='w-[20%] h-full flex flex-col py-4 px-6'>
-            <div className="w-full h-[10%] flex item-center font-bold text-3xl gap-2">
-                <img src="./images/agriculture.png" alt="no image" className="h-10 w-10 rounded-full" />
-                {!isCompressed && <h1 className='text-white'>AgriSathi</h1>}
-            </div>
-            <div className="w-full h-[90%] overflow-y-scroll text-white text-lg">
-                <MenuOption link="/" icon={<i className="fa-solid fa-house"></i>} text="Home" />
-                <MenuOption link="/goverment" icon={<i className="fa-solid fa-building-columns"></i>} text="Government" />
-                <MenuOption link="/weather-alerts" icon={<i className="fa-solid fa-cloud-sun"></i>} text="Weather Alerts" />
-                <MenuOption link="/posts" icon={<i className="fa-regular fa-clipboard"></i>} text="Posts" />
-                <MenuOption link="/farmer" icon={<i className="fa-solid fa-person-digging"></i>} text="Farmer" />
-                <MenuOption link="/crops" icon={<i className="fa-brands fa-pagelines"></i>} text="Crops" />
-                <MenuOption link="/marketplace" icon={<i className="fa-solid fa-tractor"></i>} text="MarketPlace" />
-                <MenuOption link="/settings" icon={<i className="fa-solid fa-gear"></i>} text="Settings" />
-                <MenuOption link="/manageScheme" icon={<i className="fa-solid fa-calendar-days"></i>} text="Scheme management" />
-                <MenuOption link="/profile" icon={<i className="fa fa-user"></i>} text="Sign Out" />
-            </div>
-        </header>
-    )
-}
+const MenuOption = ({ link, icon, text }) => {
+  const isCompressed = useSelector((state) => state.slider.menuOpen);
 
-export default Header
+  return (
+    <NavLink
+      to={link}
+      className={({ isActive }) =>
+        `w-full h-10 rounded-sm flex items-center gap-2 text-base mb-2 duration-200 ${
+          isActive ? "bg-white px-2 text-black" : "hover:bg-white/10"
+        }`
+      }
+    >
+      {icon}
+      {isCompressed && <h3 className={({ isActive }) =>
+        ` ${
+          isActive ? "bg-white text-black text-sm	" : "text-white text-sm"
+        }`
+      }>{text}</h3>}
+    </NavLink>
+  );
+};
+
+export default MenuOption;

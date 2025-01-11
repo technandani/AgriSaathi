@@ -1,5 +1,10 @@
 import React from "react";
 import ProductCard from "./ProductCard";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const products = [
   {
@@ -52,20 +57,35 @@ const products = [
     image: "images/Organic.jpg",
   },
 ];
-
 const ProductCards = () => {
   return (
-    <div className="flex gap-4 overflow-x-auto p-4 bg-white rounded-lg shadow-lg">
-      {products.map((product, index) => (
-        <ProductCard
-          key={index}
-          title={product.title}
-          price={product.price}
-          originalPrice={product.originalPrice}
-          discount={product.discount}
-          image={product.image}
-        />
-      ))}
+    <div className="w-full mb-8">
+      <div className="w-full text-white h-10 mb-2 text-xl">
+        <div className="flex items-center justify-between px-4">
+          <div className="font-semibold">Vegetables seeds</div>
+          <div className="font-semibold">View all</div>
+        </div>
+        <div className="w-full h-[0.1rem] bg-white mt-1"></div>
+      </div>
+
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={30}
+        slidesPerView={3}
+        navigation
+      >
+        {products.map((product, index) => (
+          <SwiperSlide key={index}>
+            <ProductCard
+              title={product.title}
+              price={product.price}
+              originalPrice={product.originalPrice}
+              discount={product.discount}
+              image={product.image}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

@@ -1,84 +1,38 @@
-import React, { useEffect, useState } from "react";
-import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { SidebarProvider } from "./context/SidebarContext"; 
-import { PostProvider } from "./context/PostContext";
-import Dashboard from "./pages/Dashboard";
-import Sidebar from "./components/Sidebar";
-import Goverment from "./pages/Goverment";
-import Posts from "./pages/Posts";
-import Settings from "./pages/Settings";
-import Profile from "./pages/Profile";
-import Farmer from "./pages/Farmer";
-import WeatherAlerts from "./pages/WeatherAlerts";
-import RegisterForWeatherAlert from './pages/RegisterForWeatherAlert';
-import { ThemeProvider } from './context/theme';
-import Schemes from './admin/Schemes';
-import MarketPlace from './pages/MarketPlace';
-import { useSidebar } from "./context/SidebarContext"; 
-
-const AppContent = () => {
-  const [themeMode, setThemeMode] = useState("light");
-  const { isCompressed } = useSidebar(); // Properly access Sidebar context
-
-  const darkTheme = () => {
-    setThemeMode("dark");
-  };
-
-  const lightTheme = () => {
-    setThemeMode("light");
-  };
-
-  useEffect(() => {
-    document.querySelector("html").classList.remove("dark", "light");
-    document.querySelector("html").classList.add(themeMode);
-  }, [themeMode]);
-
-  return (
-    <ThemeProvider value={{ themeMode, darkTheme, lightTheme }}>
-      <PostProvider>
-        <Router>
-          <div
-            className={`app-container min-h-screen transition-all duration-300 ease-in-out ${
-              themeMode === "dark"
-                ? "bg-darkBg text-lightText"
-                : "bg-lightBg text-darkText"
-            }`}
-          >
-            <Sidebar />
-            <div
-              className={`mainContentContainer transition-all duration-300 p-5 ${
-                isCompressed ? "compressed " : "notCompressed "
-              }`}
-            >
-              <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/goverment" element={<Goverment />} />
-                <Route path="/weather-alerts" element={<WeatherAlerts />} />
-                <Route
-                  path="/weather-alert-registration"
-                  element={<RegisterForWeatherAlert />}
-                />
-                <Route path="/farmer" element={<Farmer />} />
-                <Route path="/posts" element={<Posts />} />
-                <Route path="/marketPlace" element={<MarketPlace />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/settings" element={<Settings />} />
-                <Route path="/manageScheme" element={<Schemes />} />
-              </Routes>
-            </div>
-          </div>
-        </Router>
-      </PostProvider>
-    </ThemeProvider>
-  );
-};
+import { Outlet, useNavigate } from "react-router-dom";
+import Header from "./components/Header/Header"
+import { useDispatch, useSelector } from 'react-redux'
+import { checkMenu } from './features/sliderSlice'
+import 'remixicon/fonts/remixicon.css'
 
 const App = () => {
+  const isCompressed = useSelector((state) => state.slider.menuOpen)
+  const dispatch = useDispatch();
+  const handleToggle = () => {
+    dispatch(checkMenu(!isCompressed))
+}
+
+const navigate = useNavigate(); 
+
+  const handleNavigate = () => {
+    navigate("/chatbot");
+  };
+
   return (
-    <SidebarProvider>
-      <AppContent />
-    </SidebarProvider>
+    <div className="w-[100vw] h-[100vh] flex relative font-Nuntio bg-[#eee] dark:bg-[#121212] text-[#111] dark:text-[#fff]">
+      <button className={`absolute z-50 text-[2rem] ${isCompressed?"lg:left-[17%] md:left-[22%]  max-md:left-[90%] text-white":"lg:left-[5%] max-md:left-[0%] text-black dark:text-white"} top-3 text-black z-50`} onClick={handleToggle}>
+        {isCompressed ? <i className="ri-arrow-left-double-line"></i>:<i className="ri-arrow-right-double-line"></i>}
+      </button>
+      <Header />
+      <main className={`${isCompressed?"w-[80%]":"w-[96%]"} h-full duration-500 max-md:absolute px-4 py-3`}>
+        <Outlet />
+      </main>
+      <button
+        onClick={handleNavigate} // Call navigate on click
+        className="fixed bottom-8 right-8 rounded-full p-2 z-50 h-16 w-16"
+      >
+        <img src="images/5.png" className="h-full w-full" alt="Chatbot" />
+      </button>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import axios from "axios";
 import SchemeCard from "./SchemeCard";
 import EditSchemePopup from "./EditSchemePopup";
 import CreateSchemeForm from "./CreateSchemeForm";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/common/Navbar";
 
 const Schemes = () => {
   const [schemes, setSchemes] = useState([]);

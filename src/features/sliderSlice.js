@@ -9,12 +9,11 @@ export const sliderSlice = createSlice({
   initialState,
   reducers: {
     checkMenu: (state, action) => {
-      state.menuOpen = action.payload;
+      state.menuOpen = action.payload; 
     },
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { checkMenu } = sliderSlice.actions;
 
 export default sliderSlice.reducer;

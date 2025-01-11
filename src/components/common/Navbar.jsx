@@ -1,49 +1,45 @@
 import React from "react";
 
 const Navbar = () => {
-  const [icon, setIcon] = React.useState(false);
+  const [icon,setIcon] = React.useState(false);
 
   const handleToggle = () => {
-    setIcon(!icon);
-    document.documentElement.classList.toggle("dark");
+    setIcon(!icon)
+    document.documentElement.classList.toggle("dark")
   };
 
   return (
-    <div className="w-full h-14 flex items-center justify-between px-4 sticky top-0 bg-white dark:bg-gray-800 dark:text-white shadow-md">
-      {/* Search Bar */}
-      <div className="w-[30%] h-[80%]">
+    <div className="w-full h-16 flex gap-4 items-center justify-end px-6 sticky top-0 bg-white z-20 bg-[#fff] shadow-lg dark:bg-[#040404] rounded-xl">
+      <div className="lg:w-[30%] sm:w-[70%] h-[68%]">
         <input
           type="search"
-          className="w-full h-full px-4 rounded-md border-2 border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:outline-none"
+          className="w-full h-full px-2 rounded-md dark:border-gray-600 dark:text-white dark:bg-[#111] bg-[#eee] shadow-inner"
           placeholder="Search..."
         />
       </div>
-
-      {/* Icons and Profile Section */}
-      <div className="w-[15%] flex items-center gap-4 justify-end">
-        <div className="icon cursor-pointer">
-          <i className="fa fa-bell"></i>
+      <div className="lg:w-[15%] sm:w-[45%] flex items-center gap-5 justify-end">
+        <div className="icon">
+          <i className="fa fa-bell text-[25px] text-[#111] dark:text-[#fff]"></i>
         </div>
-        <div className="icon cursor-pointer">
-          <i className="fa fa-globe"></i>
+        <div className="icon">
+          <i className="fa fa-globe text-[25px] text-[#111] dark:text-[#fff]"></i>
         </div>
-        <div className="icon modeBtn cursor-pointer">
+        <div className="icon modeBtn cursor-pointer" >
           <button onClick={handleToggle} className="duration-200">
-            {icon ? (
-              <i className="fa fa-sun text-yellow-500"></i>
-            ) : (
-              <i className="fa fa-moon text-gray-500"></i>
-            )}
+            {icon?<i className="fa fa-sun text-[25px] text-[#111] dark:text-[#fff]"></i>:<i className="fa fa-moon text-[25px] text-[#111] dark:text-[#fff]"></i>}
           </button>
         </div>
-        <div className="w-10 h-10 bg-center">
-          <img
-            src="./images/user.jpg"
-            alt="User"
-            className="h-full w-full rounded-md border-2 border-gray-300 dark:border-gray-600"
-          />
-        </div>
+        <div
+        className="w-10 h-10 bg-center"
+      >
+        <img
+          src="./images/user.jpg"
+          alt="User"
+          className="h-full w-full rounded-md"
+        />
       </div>
+      </div>
+      
     </div>
   );
 };

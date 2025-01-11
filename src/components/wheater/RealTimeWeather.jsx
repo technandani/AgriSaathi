@@ -15,24 +15,24 @@ const RealTimeWeather = ({ weatherData }) => {
   } = weatherData || {};
 
   return (
-    <div className="realWheaterBox flex h-full w-full bg-transparent rounded-lg shadow-lg">
-      <div className="flex flex-col gap-3 p-4 bg-green-600 items-center justify-center dark:bg-gray-800 text-gray-100 w-1/2 rounded-l-lg">
-        <div className="text-center text-2xl font-bold">Real Time Weather</div>
+    <div className="realWheaterBox grid lg:grid-cols-2 sm:grid-cols-2 h-full w-full bg-[#fff] dark:bg-[#1a1a1a] rounded-lg shadow-lg">
+      <div className=" gap-3 p-4 m-auto items-center justify-center rounded-l-lg">
+        <div className="text-center text-3xl font-bold">Real Time Weather</div>
         <div className="text-center text-lg">{weatherData.address}</div>
         <div className="flex items-center justify-center gap-5">
-          <div className="text-6xl text-yellow-500">
+          <div className="text-6xl text-green-500">
             <i className="fa-solid fa-cloud-sun"></i>
           </div>
           <div className="text-center">
             <div className="text-3xl font-semibold">{weatherData.currentConditions.temp}°C</div>
-            <div className="text-gray-300 text-sm">
+            <div className="text-sm">
               {weatherData.days[0].tempmin}°C / {weatherData.days[0].tempmax}°C
             </div>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 p-2 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 w-1/2 rounded-r-lg">
+      <div className="grid grid-cols-2 gap-2 p-2 rounded-r-lg">
         {[
           { icon: "fa-cloud-showers-heavy", label: "Chance of Rain", value: chanceOfRain },
           { icon: "fa-bolt", label: "Lightning", value: lightning },
@@ -43,9 +43,9 @@ const RealTimeWeather = ({ weatherData }) => {
         ].map((item, index) => (
           <div
             key={index}
-            className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
+            className="flex items-center gap-3 p-3 bg-[#eee] dark:bg-[#121212] rounded-lg shadow-sm"
           >
-            <div className="text-2xl text-green-500">
+            <div className="text-4xl">
               <i className={`fa-solid ${item.icon}`}></i>
             </div>
             <div>
