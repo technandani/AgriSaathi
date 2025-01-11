@@ -8,7 +8,7 @@ const contacts = Array(8).fill({
 
 const Chat = () => {
   return (
-    <div className="flex h-full bg-gray-100">
+    <div className="flex h-full bg-gray-100 border-t mt-2">
       <div className="w-1/4 bg-white shadow-lg border-r">
         <h2 className="text-lg font-semibold px-4 py-3 border-b">Messages</h2>
         <div className="overflow-y-auto h-[calc(100%-60px)]">

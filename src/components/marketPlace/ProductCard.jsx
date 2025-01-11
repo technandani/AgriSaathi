@@ -26,4 +26,5 @@ const ProductCard = ({ title, price, originalPrice, discount, image }) => {
 
   );
 };
+
 export default ProductCard;
