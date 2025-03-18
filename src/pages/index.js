@@ -1,11 +1,11 @@
-import Dashboard from "./Dashboard";
-import Farmer from "./Farmer";
-import Goverment from "./Goverment";
-import MarketPlace from "./MarketPlace";
-import Posts from "./Posts";
-import Profile from "./Profile";
-import RegisterForWeatherAlert from "./RegisterForWeatherAlert";
-import Settings from "./Settings";
-import WeatherAlerts from "./WeatherAlerts";
+import Dashboard from "./dashboard";
+import Farmer from "./farmer";
+import Goverment from "./govermentScheme";
+import MarketPlace from "../pages/marketPlace/MarketPlace";
+import Posts from "./post";
+import Profile from "./profile";
+import RegisterForWeatherAlert from "./wheater/weatherAlertSection/RegisterForWeatherAlert";
+import Settings from "./settings";
+import WeatherAlerts from "./wheater";
 
 export {Dashboard,Farmer,Goverment,MarketPlace,Posts,Profile,RegisterForWeatherAlert,Settings,WeatherAlerts}

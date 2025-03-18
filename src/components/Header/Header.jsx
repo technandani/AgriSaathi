@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { checkMenu } from '../../features/sliderSlice'
 import MenuOption from './MenuOption'
 import 'remixicon/fonts/remixicon.css'
 
@@ -22,8 +21,8 @@ const Header = () => {
                 <MenuOption link="/farmer" icon={<i className="text-xl fa-solid fa-person-digging"></i>} text="Farmer" />
                 <MenuOption link="/crops" icon={<i className="text-xl fa-brands fa-pagelines"></i>} text="Crops" />
                 <MenuOption link="/marketplace" icon={<i className="text-xl fa-solid fa-tractor"></i>} text="MarketPlace" />
+                <MenuOption link="/rentaltools" icon={<i className="text-xl fa-solid fa-gear"></i>} text="Rental tools" />
                 <MenuOption link="/settings" icon={<i className="text-xl fa-solid fa-gear"></i>} text="Settings" />
-                <MenuOption link="/manageScheme" icon={<i className="text-xl fa-solid fa-calendar-days"></i>} text="Scheme management" />
                 <MenuOption link="/profile" icon={<i className="text-xl fa fa-user"></i>} text="Sign Out" />
             </div>
         </header>

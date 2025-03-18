@@ -9,11 +9,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-16 flex gap-4 items-center justify-end px-6 sticky top-0 bg-white z-20 bg-[#fff] shadow-lg dark:bg-[#040404] rounded-xl">
+    <div className="w-full h-16 flex gap-4 items-center justify-end px-6 sticky top-0 z-20] bg-[#eee] dark:bg-[#121212]">
       <div className="lg:w-[30%] sm:w-[70%] h-[68%]">
         <input
           type="search"
-          className="w-full h-full px-2 rounded-md dark:border-gray-600 dark:text-white dark:bg-[#111] bg-[#eee] shadow-inner"
+          className="w-full h-full px-2 rounded-md dark:border-gray-600 dark:text-white dark:bg-[#1a1a1a] bg-[#fff] shadow-lg"
           placeholder="Search..."
         />
       </div>
